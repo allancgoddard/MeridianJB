@@ -358,7 +358,7 @@ int patchContainermanagerd() {
 
 int remountRootFs() {
     NSOperatingSystemVersion osVersion = [[NSProcessInfo processInfo] operatingSystemVersion];
-    int pre130 = osVersion.minorVersion < 3 ? 1 : 0;
+    int pre130 = osVersion.minorVersion < 3 ? 0 : 1;
     
     int rv = mount_root(kslide, offsets.root_vnode, pre130);
     if (rv != 0) {
